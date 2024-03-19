@@ -8,6 +8,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn clean package'
+                sh 'ls -la'
             }
         }
         stage('Integration Test') {
@@ -35,6 +36,7 @@ pipeline {
                 stage('Running Test') {
                     agent any
                     steps {
+                        sh 'ls -la'
                         sh 'sleep 30'
                         sh 'mvn -B verify -DskipTests=false -Dtest=RestIT'
                     }
