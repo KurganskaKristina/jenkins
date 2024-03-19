@@ -202,7 +202,7 @@
                   <artifactId>maven-war-plugin</artifactId>
                   <version>2.4</version>
                   <configuration>
-                           <warSourceDirectory>target</warSourceDirectory>
+                           <warSourceDirectory>target/contact</warSourceDirectory>
                   </configuration>
             </plugin>
 
