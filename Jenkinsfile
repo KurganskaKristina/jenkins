@@ -21,7 +21,8 @@ pipeline {
                         script {
                             try {
                                 dir("target") {
-                                    sh 'java -jar contact.war'
+                                    sh 'java -jar contact.war &'
+                                    sleep 10
                                 }
                             } catch (Exception e) {
                                 echo "Application stopped after 60 seconds"
