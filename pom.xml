@@ -203,6 +203,7 @@
                   <version>2.4</version>
                   <configuration>
                            <warSourceDirectory>target/contact</warSourceDirectory>
+                           <failOnMissingWebXml>false</failOnMissingWebXml>
                   </configuration>
             </plugin>
 
