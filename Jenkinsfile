@@ -2,12 +2,12 @@ pipeline {
     agent any
     environment {
         APP_PORT=9090
-        JOB_NAME="${env.JOB_NAME}"
+        JOB_NAME=env.JOB_NAME
     }
     stages {
         stage('Build') {
             steps {
-                sh 'mvn -B package -DskipTests'
+                sh 'mvn clean package'
             }
         }
         stage('Integration Test') {
