@@ -20,9 +20,11 @@ pipeline {
                     steps {
                         script {
                             try {
+                                sh 'ls -la
                                 dir("target") {
-                                    sh 'ls -l'
-                                    // sh 'java -jar contact.war'
+                                    sh 'ls -la generated-sources'
+                                    sh 'ls -la
+                                    sh 'java -jar contact.war --httpPort=9090'
                                 }
                             } catch (Exception e) {
                                 echo "Application stopped after 60 seconds"
