@@ -9,6 +9,7 @@ pipeline {
             steps {
                 sh 'mvn clean package'
                 sh 'ls -la'
+                sh 'pwd'
             }
         }
         stage('Integration Test') {
@@ -22,7 +23,9 @@ pipeline {
                         script {
                             try {
                                 sh 'ls -la'
+                                sh 'pwd'
                                 dir("target") {
+                                    sh 'pwd'
                                     sh 'ls -la generated-sources'
                                     sh 'ls -la'
                                     sh 'java -jar contact.war --httpPort=9090'
@@ -36,6 +39,7 @@ pipeline {
                 stage('Running Test') {
                     agent any
                     steps {
+                        sh 'pwd'
                         sh 'ls -la'
                         sh 'sleep 30'
                         sh 'mvn -B verify -DskipTests=false -Dtest=RestIT'
