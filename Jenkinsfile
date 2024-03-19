@@ -20,10 +20,10 @@ pipeline {
                     steps {
                         script {
                             try {
-                                sh 'ls -la
+                                sh 'ls -la'
                                 dir("target") {
                                     sh 'ls -la generated-sources'
-                                    sh 'ls -la
+                                    sh 'ls -la'
                                     sh 'java -jar contact.war --httpPort=9090'
                                 }
                             } catch (Exception e) {
