@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         APP_PORT=9090
+        JOB_NAME="${env.JOB_NAME}"
     }
     stages {
         stage('Build') {
